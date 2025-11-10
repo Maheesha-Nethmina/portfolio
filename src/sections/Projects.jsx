@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import imgWildfire from '../assets/research.jpg';
 import imgFurniQ from '../assets/project-furniq.jpeg';
 import imgCoralStay from '../assets/Coralstay.png';
-import imgLifeLine from '../assets/project-lifeline.webp';
+import imgLifeLine from '../assets/Lifeline.png';
 import imgExploreX from '../assets/ExpolreX.png';
 import imgTravelGuide from '../assets/Travelguide.png';
 

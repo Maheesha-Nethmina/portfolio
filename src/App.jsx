@@ -1,59 +1,55 @@
 import React, { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion'; // 1. Import AnimatePresence
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
+import About from './sections/About';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import Experience from './sections/Experience';
 import Contact from './sections/Contact';
 import Footer from './components/Footer';
+import Loader from './components/Loader'; // 2. Import your new Loader
 
 function App() {
-  // --- DYNAMIC BACKGROUND LOGIC ---
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  // 3. Add loading state
+  const [isLoading, setIsLoading] = useState(true);
 
+  // 4. Simulate a load time
   useEffect(() => {
-    const handleMouseMove = (event) => {
-      setMousePos({ x: event.clientX, y: event.clientY });
-    };
+    // Set a timer for 2 seconds (2000 milliseconds)
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // <-- You can change this duration
 
-    window.addEventListener('mousemove', handleMouseMove);
-
-    // Cleanup function to remove the event listener
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []); // Empty dependency array means this effect runs once on mount
-
-  // This creates a radial gradient that follows the mouse
-  // It's a soft, multi-colored light (indigo and sky blue)
-  const dynamicBackgroundStyle = {
-    background: `
-      #f8fafc radial-gradient(
-        800px at ${mousePos.x}px ${mousePos.y}px,
-        rgba(165, 180, 252, 0.15), 
-        rgba(56, 189, 248, 0.1), 
-        transparent 60%
-      )
-    `
-  };
-  // --- END OF DYNAMIC BACKGROUND LOGIC ---
+    // Clean up the timer when the component unmounts
+    return () => clearTimeout(timer);
+  }, []); // Empty array means this runs only once on mount
 
   return (
-    // We apply the dynamic style and the base classes
-    <div 
-      style={dynamicBackgroundStyle}
-      className="min-h-screen text-slate-900 font-sans transition-colors duration-300"
-    >
-      <Navbar />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Hero />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    // 5. Use AnimatePresence to handle the exit animation
+    <AnimatePresence>
+      {isLoading ? (
+        // Show the loader while isLoading is true
+        <Loader key="loader" />
+      ) : (
+        // Show your main app content when loading is false
+        <div 
+          key="main-app"
+          className="min-h-screen bg-background text-primary-text dark:bg-dark-background dark:text-dark-primary-text font-sans transition-colors duration-300"
+        >
+          <Navbar />
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Hero />
+            <About />
+            <Skills />
+            <Projects />
+            <Experience />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      )}
+    </AnimatePresence>
   );
 }
 

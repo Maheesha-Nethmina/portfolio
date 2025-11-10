@@ -43,9 +43,7 @@ const Hero = () => {
             </span>
           </h2>
           <p className="text-lg text-slate-600 max-w-xl mx-auto md:mx-0 mb-8">
-            Motivated final-year Computer Science & Technology undergraduate at Uva Wellassa University specializing in 
-            full-stack applications (Spring Boot, React, MERN) and 
-            cloud technologies (AWS, Docker).
+            Final-year Computer Science & Technology undergraduate at Uva Wellassa University specializing in full-stack development with Spring Boot, React, and the MERN stack.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
