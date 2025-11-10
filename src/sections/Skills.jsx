@@ -1,12 +1,16 @@
 import React from 'react';
 import SectionHeader from '../components/SectionHeader';
 import { motion } from 'framer-motion';
+
+
 import { 
-  FaJava, FaReact, FaNodeJs, FaPhp, FaPython, FaDocker, FaAws, FaGitAlt, FaFigma, FaBootstrap
+  FaJava, FaReact, FaNodeJs, FaPhp, FaPython, FaDocker, FaAws, FaGithub, FaFigma, FaBootstrap
 } from 'react-icons/fa';
+
 import { 
-  SiJavascript, SiSpring, SiPostgresql, SiMysql, SiMongodb, SiTailwindcss, SiJira, SiPostman 
+  SiJavascript, SiSpring, SiPostgresql, SiMysql, SiMongodb, SiTailwindcss, SiJira, SiPostman, SiCanva, SiGithubactions
 } from 'react-icons/si';
+
 
 const skills = [
   { name: 'Java', icon: <FaJava /> },
@@ -23,10 +27,12 @@ const skills = [
   { name: 'Docker', icon: <FaDocker /> },
   { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
   { name: 'Bootstrap', icon: <FaBootstrap /> },
-  { name: 'Git', icon: <FaGitAlt /> },
+  { name: 'GitHub', icon: <FaGithub /> },
+  { name: 'GitHub Actions', icon: <SiGithubactions /> },
   { name: 'Postman', icon: <SiPostman /> },
   { name: 'Jira', icon: <SiJira /> },
   { name: 'Figma', icon: <FaFigma /> },
+  { name: 'Canva', icon: <SiCanva /> },
 ];
 
 const containerVariants = {
@@ -59,7 +65,7 @@ const Skills = () => {
             variants={itemVariants}
             whileHover={{ 
               scale: 1.05, 
-              backgroundColor: '#eef2ff', // This is bg-indigo-50
+              backgroundColor: '#eef2ff', 
               boxShadow: '0 10px 20px -5px rgb(99 102 241 / 0.2)', 
             }}
             transition={{ type: 'spring', stiffness: 300 }}

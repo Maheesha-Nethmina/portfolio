@@ -43,7 +43,9 @@ const Hero = () => {
             </span>
           </h2>
           <p className="text-lg text-slate-600 max-w-xl mx-auto md:mx-0 mb-8">
-            Final-year Computer Science and Technology undergraduate passionate about building modern, scalable, and user-focused software solutions.
+            Motivated final-year Computer Science & Technology undergraduate at Uva Wellassa University specializing in 
+            full-stack applications (Spring Boot, React, MERN) and 
+            cloud technologies (AWS, Docker).
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
