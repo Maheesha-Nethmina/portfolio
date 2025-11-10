@@ -3,22 +3,20 @@ import SectionHeader from '../components/SectionHeader';
 import ProjectCard from '../components/ProjectCard';
 import { motion } from 'framer-motion';
 
-// --- Make sure these paths are correct! ---
-import imgWildfire from '../assets/project-wildfire.jpeg';
+import imgWildfire from '../assets/research.jpg';
 import imgFurniQ from '../assets/project-furniq.jpeg';
-import imgCoralStay from '../assets/project-coralstay.webp';
+import imgCoralStay from '../assets/Coralstay.png';
 import imgLifeLine from '../assets/project-lifeline.webp';
-import imgExploreX from '../assets/project-explorex.webp';
-import imgTravelGuide from '../assets/project-travelguide.webp';
+import imgExploreX from '../assets/ExpolreX.png';
+import imgTravelGuide from '../assets/Travelguide.png';
 
-// All project data from your CV
 const projectsData = [
   {
-    title: 'Multivariate Anomaly Detection (Wildfire)',
-    description: 'Ongoing research using LSTM and Vision Transformers for early wildfire detection and stage classification.',
+    title: 'Multivariate Anomaly Detection For Wildfire Detection',
+    description: 'Ongoing research is using LSTM and Vision Transformers for early wildfire detection and stage classification.',
     imageUrl: imgWildfire,
     tags: ['Machine Learning', 'LSTM', 'Vision Transformer', 'Python'],
-    github: '', // Add link if available
+    github: '',
     live: '',
   },
   {
@@ -27,7 +25,7 @@ const projectsData = [
     imageUrl: imgFurniQ,
     tags: ['Spring Boot', 'React', 'PostgreSQL', 'Full-Stack'],
     github: 'https://github.com/Maheesha-Nethmina/FurniQ_forntend',
-    figma: 'figma/furniQ', // Replace with full figma link
+    figma: 'figma/furniQ',
   },
   {
     title: 'CoralStay - Booking Platform',

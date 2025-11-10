@@ -10,7 +10,7 @@ const certifications = [
   { name: 'Advanced React', platform: 'Meta (Coursera)', icon: <FaReact /> },
   { name: 'AWS Cloud Practitioner Essentials', platform: 'Amazon (Coursera)', icon: <FaAws /> },
   { name: 'Docker Foundations Professional Certificate', platform: 'LinkedIn', icon: <FaDocker /> },
-  { name: 'Introduction to DevOps', platform: 'IBM (Coursera)', icon: <FaAward /> }, 
+  { name: 'Introduction to DevOps', platform: 'IBM (Coursera)', icon: <FaAward /> },
 ];
 
 const fadeIn = {
@@ -24,13 +24,17 @@ const Experience = () => {
       <SectionHeader title="Certifications" />
       
       <motion.div 
-        className="w-full max-w-2xl mx-auto"
+        
+        
+        className="w-full max-w-4xl mx-auto" 
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="space-y-4">
+        
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}

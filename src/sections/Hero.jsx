@@ -23,13 +23,13 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl font-semibold text-slate-900 mb-2">
-            Hi, my name is
+            Hi, I'm
           </h2>
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-4">
             Maheesha Nethmina.
           </h1>
           <h2 className="text-3xl md:text-4xl font-semibold text-slate-600 mb-6">
-            I'm a{' '}
+            {' '}
             <span className="text-indigo-600">
               <Typewriter
                 words={roles}
@@ -43,9 +43,7 @@ const Hero = () => {
             </span>
           </h2>
           <p className="text-lg text-slate-600 max-w-xl mx-auto md:mx-0 mb-8">
-            Motivated final-year Computer Science & Technology undergraduate at Uva Wellassa University specializing in 
-            full-stack applications (Spring Boot, React, MERN) and 
-            cloud technologies (AWS, Docker).
+            Final-year Computer Science and Technology undergraduate passionate about building modern, scalable, and user-focused software solutions.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
