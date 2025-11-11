@@ -4,7 +4,7 @@ import ProjectCard from '../components/ProjectCard';
 import { motion } from 'framer-motion';
 
 import imgWildfire from '../assets/research.jpg';
-import imgFurniQ from '../assets/project-furniq.jpeg';
+import imgFurniQ from '../assets/FurniQ.png';
 import imgCoralStay from '../assets/Coralstay.png';
 import imgLifeLine from '../assets/Lifeline.png';
 import imgExploreX from '../assets/ExpolreX.png';
