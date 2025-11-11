@@ -25,7 +25,7 @@ const projectsData = [
     imageUrl: imgFurniQ,
     tags: ['Spring Boot', 'React', 'PostgreSQL', 'Full-Stack'],
     github: 'https://github.com/Maheesha-Nethmina/FurniQ_forntend',
-    figma: 'figma/furniQ',
+    figma: 'https://www.figma.com/proto/NoQpT0VO8o6Nlepjo9N6j4/FurniQ?t=odw3fn2qT126SF7n-1',
   },
   {
     title: 'CoralStay - Booking Platform',
@@ -33,7 +33,7 @@ const projectsData = [
     imageUrl: imgCoralStay,
     tags: ['MERN', 'React', 'Node.js', 'MongoDB', 'Full-Stack'],
     github: 'https://github.com/Maheesha-Nethmina/Coral-Stay_Frontend',
-    figma: 'figma/CoralStay', // Replace with full figma link
+    figma: 'https://www.figma.com/proto/AeMoXvvEQHoqYgQEOlX7qO/CoralStay?node-id=2-2&t=QNA71x9XLDJq2AAb-1',
   },
   {
     title: 'ExploreX - Frontend Web App',
@@ -41,7 +41,7 @@ const projectsData = [
     imageUrl: imgExploreX,
     tags: ['React', 'CSS', 'Frontend', 'Figma'],
     github: 'https://github.com/Maheesha-Nethmina/Explore-X',
-    figma: 'figma/ExploreX', // Replace with full figma link
+    figma: 'https://www.figma.com/proto/F73O7FgxQRQ2BRIbe66inf/ExploreX?node-id=0-1&t=odw3fn2qT126SF7n-1',
   },
   {
     title: 'LifeLine - Donation System',

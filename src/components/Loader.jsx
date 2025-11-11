@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 const loaderVariants = {
   animation: {
     rotate: 360,
-    borderRadius: ["50% 50%", "50% 50%", "2% 50%"], // Changes shape
+    borderRadius: ["50% 50%", "50% 50%", "2% 50%"], 
+    
     transition: {
       rotate: {
         duration: 1.5,
@@ -21,7 +22,7 @@ const loaderVariants = {
   },
 };
 
-// --- Animation for the whole screen fading out ---
+
 const containerVariants = {
   hidden: { 
     opacity: 0,
@@ -41,7 +42,8 @@ const Loader = () => {
       variants={containerVariants}
       initial="visible"
       animate="visible"
-      exit="hidden" // This makes it fade out
+      exit="hidden" 
+      
     >
       <motion.div
         className="w-16 h-16 border-4 border-accent dark:border-indigo-400"

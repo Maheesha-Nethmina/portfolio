@@ -1,7 +1,6 @@
 import React from 'react';
 import SectionHeader from '../components/SectionHeader';
 import { motion } from 'framer-motion';
-// --- 1. IMPORT THE WHATSAPP ICON ---
 import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
@@ -53,9 +52,9 @@ const Contact = () => {
             <FaLinkedin size={30} />
           </motion.a>
           
-          {/* --- 2. ADDED WHATSAPP ICON LINK --- */}
+
           <motion.a
-            href="https://wa.me/94712918346" // Formatted international number
+            href="https://wa.me/94712918346" 
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-600 hover:text-indigo-600"

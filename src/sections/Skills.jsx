@@ -2,8 +2,8 @@ import React from 'react';
 import SectionHeader from '../components/SectionHeader';
 import { motion } from 'framer-motion';
 
-// --- UPDATED IMPORTS ---
-// Added FaHtml5 and FaCss3Alt
+
+
 import { 
   FaJava, FaReact, FaNodeJs, FaPhp, FaPython, FaDocker, FaAws, FaGithub, FaFigma, FaBootstrap, FaHtml5, FaCss3Alt
 } from 'react-icons/fa';
@@ -12,14 +12,15 @@ import {
   SiJavascript, SiSpring, SiPostgresql, SiMysql, SiMongodb, SiTailwindcss, SiJira, SiPostman, SiCanva, SiGithubactions
 } from 'react-icons/si';
 
-// --- UPDATED SKILLS ARRAY ---
+
+
 const skills = [
   { name: 'Java', icon: <FaJava /> },
   { name: 'Spring Boot', icon: <SiSpring /> },
   { name: 'React.js', icon: <FaReact /> },
   { name: 'JavaScript', icon: <SiJavascript /> },
-  { name: 'HTML5', icon: <FaHtml5 /> }, // Added
-  { name: 'CSS3', icon: <FaCss3Alt /> }, // Added
+  // { name: 'HTML5', icon: <FaHtml5 /> },
+  // { name: 'CSS3', icon: <FaCss3Alt /> },
   { name: 'Node.js', icon: <FaNodeJs /> },
   { name: 'Python', icon: <FaPython /> },
   { name: 'PHP', icon: <FaPhp /> },
@@ -29,13 +30,13 @@ const skills = [
   { name: 'AWS', icon: <FaAws /> },
   { name: 'Docker', icon: <FaDocker /> },
   { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
-  { name: 'Bootstrap', icon: <FaBootstrap /> },
+  // { name: 'Bootstrap', icon: <FaBootstrap /> },
   { name: 'GitHub', icon: <FaGithub /> },
   { name: 'GitHub Actions', icon: <SiGithubactions /> },
   { name: 'Postman', icon: <SiPostman /> },
   { name: 'Jira', icon: <SiJira /> },
   { name: 'Figma', icon: <FaFigma /> },
-  { name: 'Canva', icon: <SiCanva /> },
+  // { name: 'Canva', icon: <SiCanva /> },
 ];
 
 const containerVariants = {
@@ -68,7 +69,7 @@ const Skills = () => {
             variants={itemVariants}
             whileHover={{ 
               scale: 1.05, 
-              backgroundColor: '#eef2ff', // This is bg-indigo-50
+              backgroundColor: '#eef2ff', 
               boxShadow: '0 10px 20px -5px rgb(99 102 241 / 0.2)', 
             }}
             transition={{ type: 'spring', stiffness: 300 }}
