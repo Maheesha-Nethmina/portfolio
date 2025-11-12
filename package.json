@@ -1,8 +1,6 @@
 {
   "name": "my-portfolio",
 
-  // --- THIS IS THE UPDATED LINE ---
-  // It now points to your new custom domain, not the old .github.io subfolder.
   "homepage": "https://maheeshanethmina.me",
 
   "private": true,
@@ -14,7 +12,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     
-    // This deployment script is correct and does not need to change.
+
     "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
