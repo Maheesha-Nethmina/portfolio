@@ -2,16 +2,28 @@ import React, { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
+const scrollToSection = (sectionId) => {
+
+  
+  const element = document.getElementById(sectionId);
+  if (element) {
+    
+    
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { name: 'Home', href: '#home' },
-    { name: 'About me', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Certificate', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', sectionId: 'home' },
+    { name: 'About me', sectionId: 'about' },
+    { name: 'Skills', sectionId: 'skills' },
+    { name: 'Projects', sectionId: 'projects' },
+    { name: 'Certificate', sectionId: 'experience' },
+    { name: 'Contact', sectionId: 'contact' },
   ];
 
   const mobileMenuVariants = {
@@ -26,21 +38,26 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           
           <div className="flex-shrink-0">
-            <a href="#home" className="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition-colors">
+            <button
+              onClick={() => scrollToSection('home')}
+              className="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition-colors"
+            >
               Maheesha Nethmina
-            </a>
+            </button>
           </div>
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
+
               {links.map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
+                  onClick={() => scrollToSection(link.sectionId)}
+
                   className="text-slate-900 hover:bg-indigo-50 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-all"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
             </div>
           </div>
@@ -67,15 +84,20 @@ const Navbar = () => {
             exit="exit"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-b border-slate-200 shadow-lg">
+
               {links.map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-slate-900 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium transition-all"
+                  onClick={() => {
+                    scrollToSection(link.sectionId);
+                    setIsOpen(false); 
+                    
+                  }}
+
+                  className="text-slate-900 hover:bg-indigo-50 hover:text-indigo-600 block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-all"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
             </div>
           </motion.div>
