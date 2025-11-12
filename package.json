@@ -1,6 +1,8 @@
 {
   "name": "my-portfolio",
 
+  // This is the URL where your site will live.
+  // This is correct for a repository named "portfolio".
   "homepage": "https://Maheesha-Nethmina.github.io/portfolio",
 
   "private": true,
@@ -12,6 +14,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     
+    // This is your new deployment script. It's correct.
     "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
