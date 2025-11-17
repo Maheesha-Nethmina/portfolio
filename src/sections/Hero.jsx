@@ -9,7 +9,7 @@ const Hero = () => {
   const roles = [
     'Software Engineer',
     'Full-Stack Developer',
-    'Front-End Engineer',
+    'Back-End Developer',
   ];
 
   return (
@@ -49,7 +49,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
             {/* --- DOWNLOAD CV BUTTON --- */}
             <motion.a
-              href="/Professional Modern CV Resume.pdf"
+              href="/Maheesha Nethmina.pdf"
               download="Maheesha_Nethmina_CV.pdf"
               className="inline-flex items-center gap-2 bg-indigo-600 text-white font-bold
                          text-lg px-8 py-4 rounded-lg shadow-lg
