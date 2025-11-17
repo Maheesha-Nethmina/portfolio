@@ -1,16 +1,31 @@
-# React + Vite
+# Maheesha Nethmina | Personal Portfolio 👨‍💻🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my official personal portfolio website. This project serves as a digital showcase of my skills, software development projects, and professional journey as an undergraduate.
 
-Currently, two official plugins are available:
+**🌐 Live Website:** [**https://maheeshanethmina.me/**](https://maheeshanethmina.me/)
+<img width="1919" height="1076" alt="Screenshot 2025-11-17 140827" src="https://github.com/user-attachments/assets/03d8c9ce-a75b-4876-a659-b75982f435dc" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 About Me
 
-## React Compiler
+I am an undergraduate at **Uva Wellassa University of Sri Lanka**, passionate about Full Stack Development and software engineering. This portfolio is built to demonstrate my ability to craft responsive, high-performance web applications.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Key Highlights:**
+* **Projects:** A collection of my work, including *FurniQ*, *CoralStay*, and *LifeLine*.
+* **Experience:** My journey in the tech industry.
+* **Contact:** Direct channels to connect for collaborations.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+This portfolio is built using modern frontend technologies for optimal performance and SEO.
+
+| Category | Technology |
+| :--- | :--- |
+| **Framework** | [React](https://react.dev/) (v18+) |
+| **Build Tool** | [Vite](https://vitejs.dev/) (Fast HMR & Bundling) |
+| **Styling** | CSS / Tailwind CSS / Styled Components |
+| **Routing** | React Router DOM |
+| **Hosting** | GitHub Pages |
+| **Domain** | Custom (`.me`) Domain |
+
