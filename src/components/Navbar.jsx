@@ -42,7 +42,7 @@ const Navbar = () => {
               onClick={() => scrollToSection('home')}
               className="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition-colors"
             >
-              Maheesha Nethmina
+              Maheesha_Nethmina
             </button>
           </div>
 
