@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SectionHeader from '../components/SectionHeader'; 
 
-
+//about me section
 const About = () => {
   return (
     <section id="about" className="py-24">
