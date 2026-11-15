@@ -116,8 +116,8 @@ const About = () => {
 
   return (
     <section ref={ref} id="about" className="py-24">
-      <SectionHeader title="About Me" kicker="01 / About" />
-
+      <SectionHeader  title="About Me" kicker="01 / About" />
+{/* About page */}
       <div className="mx-auto max-w-4xl text-center">
         <p className="about-text text-2xl font-semibold leading-snug text-ink sm:text-3xl md:text-4xl">
           I build fast, scalable software, from <span className="text-gradient">web platforms</span> to{' '}
