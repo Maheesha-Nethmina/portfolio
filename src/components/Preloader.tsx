@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from '../lib/Gsap';
-import { lockScroll } from '../lib/scroll';
+import { lockScroll } from '../lib/Scroll';
 
 const SEEN_KEY = 'portfolio-preloader-seen';
 
