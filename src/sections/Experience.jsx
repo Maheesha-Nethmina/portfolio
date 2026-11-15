@@ -1,93 +1,160 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import SectionHeader from '../components/SectionHeader';
-import { motion } from 'framer-motion';
-import { FaAws, FaDocker, FaReact, FaAward } from 'react-icons/fa'; 
-import { SiSpring } from 'react-icons/si'; 
+import { gsap, MQ } from '../lib/Gsap';
+import useMM from '../hook/UseMM';
 
-
-
-const certifications = [
-  { 
-    name: 'Spring 6: Spring Security', 
-    platform: 'LinkedIn', 
-    icon: <SiSpring />, 
-    url: 'https://www.linkedin.com/learning/certificates/925dc1bf75f7a5fa908b9324712e2bea65b309e25fe04781e1ddf20c01d50918' 
+// Newest first: work, university, school
+const timeline = [
+  {
+    kind: 'Work',
+    title: 'Software Engineer Intern',
+    org: 'Sisenco Digital, Kottawa, Sri Lanka',
+    period: 'May 2026 - Present',
+    points: [
+      'Contributing to full-stack system development, from database and APIs to responsive user interfaces.',
+      'Designed and shipped REST APIs with FastAPI and PostgreSQL.',
+      'Built Next.js + TypeScript interfaces and dashboards with Tailwind CSS.',
+      'Developing microservice-based systems with clear service boundaries and consistent API conventions.',
+      'Working with AWS cloud services to deploy and run applications.',
+      'Working in an agile team using Git workflows, code reviews and Jira.',
+    ],
+    tech: ['FastAPI', 'PostgreSQL', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Microservices', 'AWS'],
   },
-  { 
-    name: 'Spring Boot 3 Essential Training', 
-    platform: 'LinkedIn', 
-    icon: <SiSpring />, 
-    url: 'https://www.linkedin.com/learning/certificates/1acc841964aec30558d68e91d2731346f23438be226a4b49027217a1eae17987' 
+  {
+    kind: 'Education',
+    title: 'Computer Science & Technology',
+    org: 'Uva Wellassa University, Badulla',
+    period: 'Undergraduate',
+    points: [
+      'Specializing in full-stack software development.',
+      'Completed a machine learning research project on multivariate anomaly detection for wildfire detection.',
+    ],
+    tech: ['Spring Boot', 'React', 'MERN', 'Python'],
   },
-  { 
-    name: 'Advanced React', 
-    platform: 'Meta (Coursera)', 
-    icon: <FaReact />, 
-    url: 'https://www.coursera.org/account/accomplishments/verify/141L0ZZTHZHX' 
-    
+  {
+    kind: 'School',
+    title: 'G.C.E. Advanced Level & Ordinary Level ',
+    org: "St. Thomas' College, Matara",
+    period: 'Secondary Education',
+    points: ['Completed my G.C.E. O/L and A/L examinations here before moving on to university.'],
+    tech: [],
   },
-  { 
-    name: 'AWS Cloud Practitioner Essentials', 
-    platform: 'Amazon (Coursera)', 
-    icon: <FaAws />, 
-    url: 'https://www.coursera.org/account/accomplishments/verify/2IKIIQTS27FB' 
-    
-  },
-  { 
-    name: 'Docker Foundations Professional Certificate', 
-    platform: 'LinkedIn', 
-    icon: <FaDocker />, 
-    url: 'https://www.linkedin.com/learning/certificates/a3057ebb2e9543441777ae891e9d52dce528883e2ea9644f9c3b603bad344183' 
-  },
-  { 
-    name: 'Introduction to DevOps', 
-    platform: 'IBM (Coursera)', 
-    icon: <FaAward />, 
-    url: 'https://www.coursera.org/account/accomplishments/verify/W8OTV9G0RYSS' 
-    
-  }
 ];
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-};
-
 const Experience = () => {
+  const ref = useRef(null);
+
+  useMM(
+    ref,
+    (mm) => {
+      mm.add(
+        {
+          md: `(min-width: 768px) and ${MQ.motion}`,
+          sm: `(max-width: 767px) and ${MQ.motion}`,
+        },
+        (context) => {
+          const { md } = context.conditions;
+          const root = ref.current;
+
+          // The coloured line draws itself as you scroll
+          gsap.fromTo(
+            root.querySelector('.tl-line'),
+            { scaleY: 0 },
+            {
+              scaleY: 1,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: root.querySelector('.tl-list'),
+                start: 'top 70%',
+                end: 'bottom 70%',
+                scrub: true,
+              },
+            }
+          );
+
+          root.querySelectorAll('.tl-item').forEach((item, i) => {
+            const trigger = { trigger: item, start: 'top 82%', once: true };
+            gsap.from(item.querySelector('.tl-card'), {
+              x: md ? (i % 2 === 0 ? -60 : 60) : 40,
+              opacity: 0,
+              duration: 0.8,
+              ease: 'power3.out',
+              scrollTrigger: trigger,
+            });
+            gsap.from(item.querySelector('.tl-dot'), {
+              scale: 0,
+              duration: 0.5,
+              ease: 'back.out(3)',
+              scrollTrigger: trigger,
+            });
+            gsap.from(item.querySelectorAll('.tl-point'), {
+              opacity: 0,
+              x: -12,
+              stagger: 0.1,
+              delay: 0.3,
+              duration: 0.5,
+              scrollTrigger: trigger,
+            });
+          });
+        }
+      );
+    },
+    []
+  );
+
   return (
-    <section id="experience" className="py-24">
-      <SectionHeader title="Certifications" />
-      
-      <motion.div 
-        className="w-full max-w-4xl mx-auto" 
-        variants={fadeIn}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {certifications.map((cert, index) => (
-            
-            <motion.a
-              key={index}
-              href={cert.url} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="flex items-center bg-white border border-slate-200 p-4 rounded-lg shadow-lg"
-              whileHover={{ scale: 1.03, backgroundColor: '#eef2ff' }} 
-              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-            >
-              <div className="text-3xl text-indigo-600 mr-4">{cert.icon}</div>
-              <div>
-                <h4 className="text-lg font-semibold text-slate-900">{cert.name}</h4>
-                <p className="text-sm text-slate-600">{cert.platform}</p>
+    <section ref={ref} id="experience" className="py-24">
+      <SectionHeader title="Experience" kicker="02 / Journey" />
+
+      <ol className="tl-list relative mx-auto max-w-5xl">
+        {/* base line + animated fill */}
+        <span className="absolute bottom-0 left-[15px] top-0 -ml-px w-0.5 bg-line md:left-1/2" aria-hidden="true" />
+        <span
+          className="tl-line absolute bottom-0 left-[15px] top-0 -ml-px w-0.5 origin-top bg-brand md:left-1/2"
+          aria-hidden="true"
+        />
+
+        {timeline.map((item, i) => (
+          <li
+            key={item.title}
+            className={`tl-item relative mb-10 pl-12 last:mb-0 md:flex md:pl-0 ${
+              i % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
+            }`}
+          >
+            <span
+              className="tl-dot absolute left-[15px] top-7 -ml-2 h-4 w-4 rounded-full bg-cta ring-4 ring-page md:left-1/2"
+              aria-hidden="true"
+            />
+            <div className="tl-card w-full rounded-xl border border-line bg-card p-6 shadow-lg md:w-[calc(50%-2rem)]">
+              <div className="mb-3 flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-brand-soft px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand">
+                  {item.kind}
+                </span>
+                <span className="text-sm text-ink-soft">{item.period}</span>
               </div>
-            </motion.a>
-
-          ))}
-        </div>
-      </motion.div>
-
+              <h3 className="text-xl font-bold text-ink">{item.title}</h3>
+              <p className="mb-4 font-medium text-brand">{item.org}</p>
+              <ul className={`space-y-2 ${item.tech.length ? 'mb-4' : ''}`}>
+                {item.points.map((point) => (
+                  <li key={point} className="tl-point flex gap-2 text-sm text-ink-soft sm:text-base">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand"></span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              {item.tech.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {item.tech.map((t) => (
+                    <span key={t} className="rounded-full bg-brand-soft px-3 py-1 text-xs font-semibold text-brand">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </li>
+        ))}
+      </ol>
     </section>
   );
 };
