@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { gsap, MQ } from '../lib/gsap';
+import { gsap, MQ } from '../lib/Gsap';
 import useMM from '../hook/UseMM';
 
 const ScrollProgress = () => {
